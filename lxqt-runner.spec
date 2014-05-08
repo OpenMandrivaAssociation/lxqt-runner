@@ -8,6 +8,8 @@ License: GPL
 Group: Graphical desktop/KDE
 BuildRequires: cmake
 BuildRequires: cmake(lxqt)
+BuildRequires: cmake(lxqt_globalkeys)
+BuildRequires: cmake(lxqt_globalkeys_ui)
 BuildRequires: qt4-devel
 
 %description
