@@ -1,9 +1,9 @@
-%define git 20140803
+%define git 0
 
 Name: lxqt-runner
 Version: 0.8.0
 %if %git
-Release: 0.%git.2
+Release: 0.%git.1
 Source0: %{name}-%{git}.tar.xz
 %else
 Release: 1
@@ -28,7 +28,7 @@ Launcher runner for the LXQt desktop
 %if %git
 %setup -qn %{name}-%{git}
 %else
-%setup -q -c %{name}-%{version}
+%setup -q
 %endif
 %cmake -DUSE_QT5:BOOL=ON
 
@@ -40,4 +40,5 @@ Launcher runner for the LXQt desktop
 
 %files
 %{_bindir}/lxqt-runner
+%{_datadir}/lxqt-qt5/translations/lxqt-runner
 %{_datadir}/lxqt/lxqt-runner
