@@ -1,12 +1,12 @@
 %define git 0
 
 Name: lxqt-runner
-Version: 0.8.0
+Version: 0.9.0
 %if %git
 Release: 0.%git.1
 Source0: %{name}-%{git}.tar.xz
 %else
-Release: 2
+Release: 1
 Source0: http://lxqt.org/downloads/lxqt/%{version}/%{name}-%{version}.tar.xz
 %endif
 Summary: Launcher runner for the LXQt desktop
@@ -14,9 +14,9 @@ URL: http://lxqt.org/
 License: GPL
 Group: Graphical desktop/KDE
 BuildRequires: cmake
-BuildRequires: cmake(lxqt-qt5)
-BuildRequires: cmake(lxqt-globalkeys-qt5)
-BuildRequires: cmake(lxqt-globalkeys-ui-qt5)
+BuildRequires: cmake(lxqt)
+BuildRequires: cmake(lxqt-globalkeys)
+BuildRequires: cmake(lxqt-globalkeys-ui)
 BuildRequires: cmake(Qt5LinguistTools)
 BuildRequires: cmake(Qt5X11Extras)
 BuildRequires: qt5-devel
@@ -40,5 +40,5 @@ Launcher runner for the LXQt desktop
 
 %files
 %{_bindir}/lxqt-runner
-%{_datadir}/lxqt-qt5/translations/lxqt-runner
+%{_datadir}/lxqt/translations/lxqt-runner
 %{_datadir}/lxqt/lxqt-runner
