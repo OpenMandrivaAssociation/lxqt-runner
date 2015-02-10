@@ -6,7 +6,7 @@ Version: 0.9.0
 Release: 0.%git.1
 Source0: %{name}-%{git}.tar.xz
 %else
-Release: 1
+Release: 2
 Source0: http://lxqt.org/downloads/lxqt/%{version}/%{name}-%{version}.tar.xz
 %endif
 Summary: Launcher runner for the LXQt desktop
@@ -38,7 +38,8 @@ Launcher runner for the LXQt desktop
 %install
 %makeinstall_std -C build
 
-%files
+%find_lang %{name} --with-qt
+
+%files -f %{name}.lang
 %{_bindir}/lxqt-runner
-%{_datadir}/lxqt/translations/lxqt-runner
 %{_datadir}/lxqt/lxqt-runner
