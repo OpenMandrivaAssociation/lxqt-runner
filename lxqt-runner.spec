@@ -6,13 +6,14 @@ Version: 0.9.0
 Release: 0.%git.1
 Source0: %{name}-%{git}.tar.xz
 %else
-Release: 3
+Release: 4
 Source0: http://lxqt.org/downloads/lxqt/%{version}/%{name}-%{version}.tar.xz
 %endif
 Summary: Launcher runner for the LXQt desktop
 URL: http://lxqt.org/
 License: GPL
 Group: Graphical desktop/KDE
+Patch0: lxqt-runner-0.9.0-run-new-process-as-a-direct-child.patch
 BuildRequires: cmake
 BuildRequires: cmake(lxqt)
 BuildRequires: cmake(lxqt-globalkeys)
@@ -26,7 +27,7 @@ BuildRequires: cmake(KF5WindowSystem)
 BuildRequires: pkgconfig(libmenu-cache)
 
 %description
-Launcher runner for the LXQt desktop
+Launcher runner for the LXQt desktop.
 
 %prep
 %if %git
@@ -34,6 +35,7 @@ Launcher runner for the LXQt desktop
 %else
 %setup -q
 %endif
+%apply_patches
 %cmake_qt5
 
 %build
