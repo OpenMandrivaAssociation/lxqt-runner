@@ -1,19 +1,18 @@
 %define git 0
 
 Name: lxqt-runner
-Version: 0.9.0
+Version: 0.10.0
 %if %git
 Release: 0.%git.1
 Source0: %{name}-%{git}.tar.xz
 %else
-Release: 5
-Source0: http://lxqt.org/downloads/lxqt/%{version}/%{name}-%{version}.tar.xz
+Release: 1
+Source0: https://github.com/lxde/%{name}/archive/%{version}.tar.gz
 %endif
 Summary: Launcher runner for the LXQt desktop
 URL: http://lxqt.org/
 License: GPL
 Group: Graphical desktop/KDE
-Patch0: lxqt-runner-0.9.0-run-new-process-as-a-direct-child.patch
 BuildRequires: cmake
 BuildRequires: cmake(lxqt)
 BuildRequires: cmake(lxqt-globalkeys)
@@ -48,4 +47,3 @@ Launcher runner for the LXQt desktop.
 
 %files -f %{name}.lang
 %{_bindir}/lxqt-runner
-%{_datadir}/lxqt/lxqt-runner
