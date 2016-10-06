@@ -1,12 +1,12 @@
 %define git 0
 
 Name: lxqt-runner
-Version: 0.10.0
+Version: 0.11.0
 %if %git
 Release: 1.%git.1
 Source0: %{name}-%{git}.tar.xz
 %else
-Release: 6
+Release: 1
 Source0: https://github.com/lxde/%{name}/archive/%{name}-%{version}.tar.xz
 %endif
 Summary: Launcher runner for the LXQt desktop
