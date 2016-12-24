@@ -29,6 +29,7 @@ BuildRequires: cmake(Qt5Script)
 BuildRequires: cmake(Qt5LinguistTools)
 BuildRequires: cmake(qt5xdg)
 BuildRequires: cmake(KF5WindowSystem)
+BuildRequires: cmake(lxqt-build-tools)
 BuildRequires: pkgconfig(libmenu-cache)
 
 %description
