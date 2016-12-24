@@ -12,7 +12,13 @@ Source0: https://github.com/lxde/%{name}/archive/%{name}-%{version}.tar.xz
 Summary: Launcher runner for the LXQt desktop
 URL: http://lxqt.org/
 License: GPL
-Group: Graphical desktop/KDE
+Group: Graphical desktop/Other
+# (tpg) patches from upstream git
+Patch0: 0000-Fix-endif-placement-when-test-for-MATH-library.patch
+Patch1: 0001-Remove-cpack-49.patch
+Patch2: 0002-Fixes-FTBFS-when-libmenu-cache-was-installed-to-non-.patch
+Patch3: 0003-Use-the-new-MenuCache-configuration-CMake-module.patch
+Patch4: 0004-MathItem-Honor-system-locale-52.patch
 BuildRequires: cmake
 BuildRequires: cmake(lxqt)
 BuildRequires: cmake(lxqt-globalkeys)
