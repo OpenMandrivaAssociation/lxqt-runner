@@ -20,6 +20,7 @@ Patch2: 0002-Fixes-FTBFS-when-libmenu-cache-was-installed-to-non-.patch
 Patch3: 0003-Use-the-new-MenuCache-configuration-CMake-module.patch
 Patch4: 0004-MathItem-Honor-system-locale-52.patch
 BuildRequires: cmake
+BuildRequires: ninja
 BuildRequires: cmake(lxqt)
 BuildRequires: cmake(lxqt-globalkeys)
 BuildRequires: cmake(lxqt-globalkeys-ui)
@@ -31,6 +32,7 @@ BuildRequires: cmake(qt5xdg)
 BuildRequires: cmake(KF5WindowSystem)
 BuildRequires: cmake(lxqt-build-tools)
 BuildRequires: pkgconfig(libmenu-cache)
+BuildRequires: pkgconfig(muparser)
 
 %description
 Launcher runner for the LXQt desktop.
@@ -42,15 +44,13 @@ Launcher runner for the LXQt desktop.
 %setup -q
 %endif
 %apply_patches
-%cmake_qt5
+%cmake_qt5 -DPULL_TRANSLATIONS=NO -G Ninja
 
 %build
-%make -C build
+%ninja -C build
 
 %install
-%makeinstall_std -C build
+%ninja_install -C build
 
-%find_lang %{name} --with-qt
-
-%files -f %{name}.lang
+%files
 %{_bindir}/lxqt-runner
