@@ -1,13 +1,13 @@
 %define git 0
 
 Name: lxqt-runner
-Version: 0.11.1
+Version: 0.12.0
 %if %git
-Release: 1.%git.1
+Release: 0.%git.1
 Source0: %{name}-%{git}.tar.xz
 %else
 Release: 1
-Source0: https://github.com/lxde/lxqt-runner/releases/download/%{version}/%{name}-%{version}.tar.xz
+Source0: https://downloads.lxqt.org/downloads/%{name}/%{version}/%{name}-%{version}.tar.xz
 %endif
 Summary: Launcher runner for the LXQt desktop
 URL: http://lxqt.org/
@@ -48,3 +48,4 @@ Launcher runner for the LXQt desktop.
 
 %files
 %{_bindir}/lxqt-runner
+%{_sysconfdir}/xdg/qt5/autostart/lxqt-runner.desktop
