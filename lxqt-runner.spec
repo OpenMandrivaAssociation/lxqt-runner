@@ -6,7 +6,7 @@ Version: 0.12.0
 Release: 0.%git.1
 Source0: %{name}-%{git}.tar.xz
 %else
-Release: 1
+Release: 2
 Source0: https://downloads.lxqt.org/downloads/%{name}/%{version}/%{name}-%{version}.tar.xz
 %endif
 Summary: Launcher runner for the LXQt desktop
@@ -48,4 +48,4 @@ Launcher runner for the LXQt desktop.
 
 %files
 %{_bindir}/lxqt-runner
-%{_sysconfdir}/xdg/qt5/autostart/lxqt-runner.desktop
+%{_sysconfdir}/xdg/autostart/lxqt-runner.desktop
