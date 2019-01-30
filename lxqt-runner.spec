@@ -1,12 +1,12 @@
 %define git 0
 
 Name: lxqt-runner
-Version: 0.13.0
+Version: 0.14.0
 %if %git
-Release: 1.%git.1
+Release: 0.%git.1
 Source0: %{name}-%{git}.tar.xz
 %else
-Release: 2
+Release: 1
 Source0: https://downloads.lxqt.org/downloads/%{name}/%{version}/%{name}-%{version}.tar.xz
 %endif
 Summary: Launcher runner for the LXQt desktop
@@ -33,9 +33,9 @@ Launcher runner for the LXQt desktop.
 
 %prep
 %if %git
-%setup -qn %{name}-%{git}
+%autosetup -p1 -n %{name}-%{git}
 %else
-%setup -q
+%autosetup -p1
 %endif
 %apply_patches
 %cmake_qt5 -DPULL_TRANSLATIONS=NO -G Ninja
@@ -45,7 +45,9 @@ Launcher runner for the LXQt desktop.
 
 %install
 %ninja_install -C build
+%find_lang %{name} --with-qt --all-name
 
-%files
+%files -f %{name}.lang
 %{_bindir}/lxqt-runner
 %{_sysconfdir}/xdg/autostart/lxqt-runner.desktop
+%{_mandir}/man1/*
