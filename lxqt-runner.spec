@@ -1,14 +1,7 @@
-%define git 0
-
 Name: lxqt-runner
-Version: 0.17.0
-%if %git
-Release: 1.%git.1
-Source0: %{name}-%{git}.tar.xz
-%else
-Release: 1
+Version: 1.0.0
+Release: %{?git:0.%git.}1
 Source0: https://github.com/lxqt/lxqt-runner/releases/download/%{version}/lxqt-runner-%{version}.tar.xz
-%endif
 Summary: Launcher runner for the LXQt desktop
 URL: http://lxqt.org/
 License: GPL
@@ -32,12 +25,7 @@ BuildRequires: pkgconfig(muparser)
 Launcher runner for the LXQt desktop.
 
 %prep
-%if %git
-%autosetup -p1 -n %{name}-%{git}
-%else
 %autosetup -p1
-%endif
-%autopatch -p1
 %cmake_qt5 -DPULL_TRANSLATIONS=NO -G Ninja
 
 %build
