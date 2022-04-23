@@ -1,6 +1,6 @@
 Name: lxqt-runner
-Version: 1.0.0
-Release: %{?git:0.%git.}1
+Version: 1.1.0
+Release: %{?git:1.%git.}1
 Source0: https://github.com/lxqt/lxqt-runner/releases/download/%{version}/lxqt-runner-%{version}.tar.xz
 Summary: Launcher runner for the LXQt desktop
 URL: http://lxqt.org/
@@ -39,5 +39,4 @@ Launcher runner for the LXQt desktop.
 %{_bindir}/lxqt-runner
 %{_sysconfdir}/xdg/autostart/lxqt-runner.desktop
 %{_mandir}/man1/*
-%lang(arn) %{_datadir}/lxqt/translations/lxqt-runner/lxqt-runner_arn.qm
-%lang(ast) %{_datadir}/lxqt/translations/lxqt-runner/lxqt-runner_ast.qm
+%dir %{_datadir}/lxqt/translations/lxqt-runner
