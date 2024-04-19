@@ -17,6 +17,7 @@ BuildRequires: cmake(Qt6LinguistTools)
 BuildRequires: cmake(qt6xdg)
 BuildRequires: cmake(KF6WindowSystem)
 BuildRequires: cmake(lxqt2-build-tools)
+BuildRequires: cmake(LayerShellQt)
 BuildRequires: pkgconfig(libmenu-cache)
 BuildRequires: pkgconfig(muparser)
 
