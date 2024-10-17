@@ -3,7 +3,7 @@ Version: 2.0.0
 Release: %{?git:1.%git.}2
 Source0: https://github.com/lxqt/lxqt-runner/releases/download/%{version}/lxqt-runner-%{version}.tar.xz
 Summary: Launcher runner for the LXQt desktop
-URL: http://lxqt.org/
+URL: https://lxqt.org/
 License: GPL
 Group: Graphical desktop/Other
 BuildRequires: cmake
