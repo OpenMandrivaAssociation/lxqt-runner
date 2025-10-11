@@ -1,6 +1,6 @@
 Name: lxqt-runner
 Version: 2.2.0
-Release: %{?git:1.%git.}1
+Release: %{?git:1.%git.}2
 Source0: https://github.com/lxqt/lxqt-runner/releases/download/%{version}/lxqt-runner-%{version}.tar.xz
 Summary: Launcher runner for the LXQt desktop
 URL: https://lxqt.org/
