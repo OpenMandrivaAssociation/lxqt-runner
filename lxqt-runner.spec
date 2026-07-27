@@ -1,13 +1,13 @@
 Name: lxqt-runner
 Version: 2.4.0
-Release: %{?git:1.%git.}1
+Release: %{?git:1.%git.}2
 Source0: https://github.com/lxqt/lxqt-runner/releases/download/%{version}/lxqt-runner-%{version}.tar.xz
 Summary: Launcher runner for the LXQt desktop
 URL: https://lxqt.org/
 License: GPL
 Group: Graphical desktop/Other
-BuildRequires: cmake
-BuildRequires: ninja
+BuildSystem: cmake
+BuildOption: -DPULL_TRANSLATIONS=NO
 BuildRequires: cmake(lxqt)
 BuildRequires: cmake(lxqt-globalkeys)
 BuildRequires: cmake(lxqt-globalkeys-ui)
@@ -23,16 +23,6 @@ BuildRequires: pkgconfig(muparser)
 
 %description
 Launcher runner for the LXQt desktop.
-
-%prep
-%autosetup -p1
-%build
-%cmake -DPULL_TRANSLATIONS=NO -G Ninja
-%ninja_build
-
-%install
-%ninja_install -C build
-%find_lang %{name} --with-qt --all-name
 
 %files -f %{name}.lang
 %{_bindir}/lxqt-runner
