@@ -28,7 +28,7 @@ Launcher runner for the LXQt desktop.
 %autosetup -p1
 %build
 %cmake -DPULL_TRANSLATIONS=NO -G Ninja
-%ninja -C build
+%ninja_build
 
 %install
 %ninja_install -C build
